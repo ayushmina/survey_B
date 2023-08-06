@@ -1,0 +1,13 @@
+{
+    "port": 8080,
+    "log": {
+      "level": "info",
+      "filename": "app.log"
+    },
+    "db": {
+      "databaseUrl": "mongodb://localhost:27017/e_freelancer",
+      "firebaseDatabaseUrl": ""
+    }
+
+  
+}

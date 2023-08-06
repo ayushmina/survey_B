@@ -1,0 +1,32 @@
+{
+  "port": 8080,
+  "log": {
+    "level": "info",
+    "filename": "app.log"
+  },
+  "db": {
+    "databaseUrl": "mongodb://localhost:27017/datingApp",
+    "firebaseDatabaseUrl": "https://console.firebase.google.com/u/7/project/tribu-dev/firestore/data/~2Fusers"
+  },
+  "cryptoConfig": {
+    "algorithm": "aes-256-ctr",
+    "key": "wbedibeiwhduwiehdwuihd;ixhewow;do034i0348-0348-034vyiuGVvbgvgv89873%$%#"
+  },
+  "hashLength": 10,
+  "adminPassword": "tribu",
+  "adminEmail": "admin@tribu.com",
+  "jwt": {
+    "secret": "9cvrSBzHzGP9pPXR5nLR",
+    "tokenExpire": 120
+  },
+  "stripe": {
+    "secretKey": "sk_test_51IpZAyEth7CdLPjsexB0UsL1TTETaLvFVXyQRHlH4I4eeO2jJ1JRfTIKitos4iDY3YIVyDgbPjPNj8zKiyViZQjt0080CogEid"
+  },
+  "sdkLocation": "../../tribu-c5814-firebase-adminsdk-700lq-2618acd11e.json",
+  "sessionManager": {
+    "webMultiSession": true,
+    "deviceMultiSession": true,
+    "adminTokenExpireTime": 120,
+    "userTokenExpireTime": 0
+  }
+}
