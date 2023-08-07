@@ -34,22 +34,27 @@ Before you begin, ensure you have the following prerequisites installed:
 
 1. Clone the repository:
 
-   ```sh
-   git clone https://github.com/your-username/survey-application.git
-   cd survey-application
+
+   ```sh 
+   Backend
+   git clone https://github.com/ayushmina/survey_B.git
+  
+   ```
+  ```sh
+  frontend
+   git clone https://github.com/ayushmina/survey_B.git
+
    ```
 
 2. Install frontend dependencies:
 
    ```sh
-   cd frontend
    npm install
    ```
 
 3. Install backend dependencies:
 
    ```sh
-   cd ../backend
    npm install
    ```
 
