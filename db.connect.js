@@ -2,19 +2,11 @@ const mongoose         = require("mongoose")
 const config           = require("config")
 function mongoConnect() {
   try {
-    const url = config.get("db.databaseUrl")
+    const url = "mongodb+srv://aayush:ayush@cluster0.rk3ez6o.mongodb.net/?retryWrites=true&w=majority";
     console.log("Url mongo:", url)
-    mongoose.connect(
-      url,
-      { useUnifiedTopology: true, useNewUrlParser: true },
-      (error) => {
-        if(error==null){
-          console.log("connection successfully DB")
-        }else{
-        console.log("connection error", error)
-        }
-      }
-    )
+    mongoose.connect(url).then(()=>{
+      console.log(" ok db connect")
+    })
   } catch (error) {
     console.log(error)
     throw error

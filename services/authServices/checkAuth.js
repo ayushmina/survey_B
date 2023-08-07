@@ -4,10 +4,10 @@ const Boom =require("boom");
 let universalFunctions= require("../../utils/universalFunctions");
 let  models=require("../../models/index");
 const checkAuth =  async(req, res, next) => {
-    const token = req.headers["x-access-token"]  || req.headers["token"];
+    // const token = req.headers["x-access-token"]  || req.headers["token"]|| req.headers.get("authorization");
     let address=req.query["x-access-address"];
-    // console.log("token:",token);
-    // let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDViNmZiNDJhZDYyNTZkOWFlZTM0ZTYiLCJpYXQiOjE2ODM3MTM5NzJ9.2ogtd8Et1tgL4l1jwnumJyNxRizYmcqeMzddOIy6SOk"
+    // console.log("token:",req.headers.get("authorization"));
+    let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGQwNzY4MjE3MzRkYWM4ZmVjMjkxMjciLCJpYXQiOjE2OTEzODM0Mjd9.m4TOWRkk3zzNPojGA7MeTJGCRQYpr0VRvYmFrOT3DzY"
 
       if (token) {
         // let decoded = jwt_decode(token);
@@ -18,7 +18,7 @@ const checkAuth =  async(req, res, next) => {
 
             console.log("decoded inside",decoded);
   
-              let model = models.userSchema;
+              let model = models.users;
               // let user = await model.findOne({ firebaseUserId: decoded.user_id });
               let user = await model.findOne({ _id: decoded.userId });
   
@@ -33,9 +33,7 @@ const checkAuth =  async(req, res, next) => {
          
                 let userInfo = {
                   id: user._id,
-                  name: user.firstName,
-                  email: user.email ? user.email :"",
-                  phoneNumber: user.phoneNumber ? user.phoneNumber : "",
+                  userName: user.userName?user.userName:"",
                 };
                 req.user = userInfo;
                 next();

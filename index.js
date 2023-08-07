@@ -3,7 +3,7 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 let db=require("./db.connect");
-
+let route =require("./route")
 
 
 var app = express();
@@ -24,10 +24,10 @@ app.use("/public", express.static("public"));
 
 db.mongoConnect();
 
-// app.use('/', indexRouter);
+app.use('/', route);
 
-app.use('/admin', usersRouter.adminRoutes);
-app.use('/websites', usersRouter.websitesRoutes);
+// app.use('/admin', usersRouter.adminRoutes);
+// app.use('/websites', usersRouter.websitesRoutes);
 
 // error handler
 

@@ -3,7 +3,7 @@ const Config            =require("config");
 const responseMessage   =require("../../resources/response.json");
 const Boom              =require("boom");
 const unversalFunction  =require("../../utils/universalFunctions");
-const models            =require("../../Models/");
+const models            =require("../../models/");
 
 
 

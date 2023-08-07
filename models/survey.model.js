@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const survey = new Schema(
 {
-    postedBy:{type: Schema.ObjectId, ref: "user"},
+    postedBy:{type: Schema.ObjectId, ref: "surveyusers"},
     Title:{type: String,trim: true},
-    question:[
+    questions:[
       {
       type:Object,
       response: Schema.Types.Mixed 
